@@ -5,17 +5,19 @@ spring:
         bindings:
           input4:
             consumer:
+              # 异步接收
               orderly: false
               tags: tagStr
           input3:
             consumer:
+              # 同步顺序接收
               orderly: true
               tags: tag1
         binder:
           name-server: 127.0.0.1:9876
       bindings:
-        input3: {group: "test-group3", destination: "test", content-type: "text/plain"}
-        input4: {group: "test-group4", content-type: "text/plain", destination: "test"}
+        input3: {group: "test-group3", destination: "test", content-type: "application/json"}
+        input4: {group: "test-group4", content-type: "application/json", destination: "test"}
 
 server:
   port: 9090
