@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+#        bindings:
+#          input2:
+#            consumer:
+#              orderly: false
+#              tags: tagStr
+#          input1:
+#            consumer:
+#              orderly: true
+        binder:
+          name-server: 127.0.0.1:9876
+      bindings:
+        output1:
+          content-type: application/json
+          destination: test
+        output2:
+          content-type: application/json
+          destination: test2

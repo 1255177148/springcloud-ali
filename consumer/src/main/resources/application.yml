@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        bindings:
+          input4:
+            consumer:
+              orderly: false
+              tags: tagStr
+          input3:
+            consumer:
+              orderly: true
+              tags: tag1
+        binder:
+          name-server: 127.0.0.1:9876
+      bindings:
+        input3: {group: "test-group3", destination: "test", content-type: "text/plain"}
+        input4: {group: "test-group4", content-type: "text/plain", destination: "test"}
+
+server:
+  port: 9090
