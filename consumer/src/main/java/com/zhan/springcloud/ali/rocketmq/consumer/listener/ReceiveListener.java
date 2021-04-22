@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @Author elvis
  * @Date 2021/4/20 12:45
+ * 这里使用的是spring cloud ali官方提供的spring cloud stream集成rocketMQ的方法
  */
 @Component
 public class ReceiveListener {

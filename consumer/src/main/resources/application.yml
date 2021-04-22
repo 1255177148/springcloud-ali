@@ -6,7 +6,7 @@ spring:
           input4:
             consumer:
               # 异步接收
-              orderly: false
+#              orderly: false
               tags: tagStr
           input3:
             consumer:
@@ -19,5 +19,8 @@ spring:
         input3: {group: "test-group3", destination: "test", content-type: "application/json"}
         input4: {group: "test-group4", content-type: "application/json", destination: "test"}
 
+
 server:
   port: 9090
+rocketmq:
+  name-server: 127.0.0.1:9876

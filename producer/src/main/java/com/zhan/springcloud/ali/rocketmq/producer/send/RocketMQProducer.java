@@ -7,6 +7,9 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @Author elvis
  * @Date 2021/4/20 12:01
@@ -20,11 +23,13 @@ public class RocketMQProducer {
         producer.start();
         SendModel sendModel = new SendModel();
         sendModel.setCode("200");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "zhan");
         jsonObject.put("message", "hello");
+        jsonObject.put("date", format.format(new Date()));
         sendModel.setData(jsonObject);
-        Message message = new Message("test", "tag1", JSON.toJSONString(sendModel).getBytes());
+        Message message = new Message("test", "tag2", JSON.toJSONString(sendModel).getBytes());
         producer.send(message);
         producer.shutdown();
     }
