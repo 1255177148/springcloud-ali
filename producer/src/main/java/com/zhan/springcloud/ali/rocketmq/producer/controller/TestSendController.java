@@ -22,4 +22,9 @@ public class TestSendController {
     public void send() throws Exception {
         rocketMQProducer.output1();
     }
+
+    @GetMapping("/template")
+    public void sendByTemplate(){
+        rocketMQProducer.send();
+    }
 }

@@ -21,6 +21,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <rocketmq.version>2.0.4</rocketmq.version>
     </properties>
 
     <dependencyManagement>
@@ -31,6 +32,14 @@
                 <version>2.2.0.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- 如果不想使用springcloud-ali官方提供的rocketMQ使用，
+         则可以使用下面这个导入包，这个是springboot集成rocketMQ的用法，可以直接使用RocketMQTemplate 发送消息-->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

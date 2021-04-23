@@ -36,6 +36,13 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
         </dependency>
+
+        <!-- 如果不想使用springcloud-ali官方提供的rocketMQ使用，
+         则可以使用下面这个导入包，这个是springboot集成rocketMQ的用法，可以直接使用RocketMQTemplate 发送消息-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
